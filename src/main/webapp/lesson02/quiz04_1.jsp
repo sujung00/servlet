@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>BMI 계산</title>
+<title>계산기</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 	crossorigin="anonymous"></script>
@@ -26,28 +26,30 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-<%
-	int height = Integer.parseInt(request.getParameter("height"));
-	int weight = Integer.parseInt(request.getParameter("weight"));
-	double bmi = weight / ((height / 100.0) * (height / 100.0));
+	<%
+	int number1 = Integer.parseInt(request.getParameter("number1"));
+	int number2 = Integer.parseInt(request.getParameter("number2"));
+	String calc = request.getParameter("calc");
 
-	String state;
-	if(bmi < 20){
-		state = "저체중";
-	} else if(bmi <= 25) {
-		state = "정상";
-	} else if(bmi <= 30) {
-		state = "과체중";
-	} else if (bmi > 30) {
-		state = "비만";
-	} else {
-		state = "잘못된 입력";
+	double result = 0;
+	if (calc.equals("plus")) {
+		result = number1 + number2;
+		calc = "+";
+	} else if (calc.equals("minus")) {
+		result = number1 - number2;
+		calc = "-";
+	} else if (calc.equals("multiple")) {
+		result = number1 * number2;
+		calc = "X";
+	} else if (calc.equals("divide")) {
+		result = number1 / number2;
+		calc = "÷";
 	}
-%>
-<div class="container">
-	<h2>BMI 측정 결과</h2>
-	<span class="display-4">당신은 <span class="text-info"><%= state %></span> 입니다.</span>
-	<div>BMI 수치 : <%= bmi %></div>
-</div>
+	%>
+
+	<div class="container">
+		<h2>계산 결과</h2>
+		<span class="display-3"><%=number1%> <%=calc%> <%=number2%> = <span class="text-primary"><%= result %></span>
+	</div>
 </body>
 </html>

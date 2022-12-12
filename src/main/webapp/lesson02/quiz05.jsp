@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>BMI 계산</title>
+<title>길이 변환</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 	crossorigin="anonymous"></script>
@@ -26,28 +26,19 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-<%
-	int height = Integer.parseInt(request.getParameter("height"));
-	int weight = Integer.parseInt(request.getParameter("weight"));
-	double bmi = weight / ((height / 100.0) * (height / 100.0));
-
-	String state;
-	if(bmi < 20){
-		state = "저체중";
-	} else if(bmi <= 25) {
-		state = "정상";
-	} else if(bmi <= 30) {
-		state = "과체중";
-	} else if (bmi > 30) {
-		state = "비만";
-	} else {
-		state = "잘못된 입력";
-	}
-%>
-<div class="container">
-	<h2>BMI 측정 결과</h2>
-	<span class="display-4">당신은 <span class="text-info"><%= state %></span> 입니다.</span>
-	<div>BMI 수치 : <%= bmi %></div>
-</div>
+	<div class="container">
+		<h2>길이 변환</h2>
+		<form method="post" action="/lesson02/quiz05_1.jsp">
+			<div class="d-flex">
+				<input type="text" name="cm" class="form-control col-2">
+				<span class="ml-2 mt-3">cm</span>
+			</div>
+			<label>인치 <input type="checkbox" name="unit" value="inch"></label>
+			<label>야드 <input type="checkbox" name="unit" value="yard"></label>
+			<label>피트 <input type="checkbox" name="unit" value="feet"></label>
+			<label>미터 <input type="checkbox" name="unit" value="meter"></label><br>
+			<input type="submit" value="변환하기" class="btn btn-success">
+		</form>
+	</div>
 </body>
 </html>

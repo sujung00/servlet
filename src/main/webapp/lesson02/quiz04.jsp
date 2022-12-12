@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>BMI 계산</title>
+<title>계산기</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 	crossorigin="anonymous"></script>
@@ -26,28 +26,20 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-<%
-	int height = Integer.parseInt(request.getParameter("height"));
-	int weight = Integer.parseInt(request.getParameter("weight"));
-	double bmi = weight / ((height / 100.0) * (height / 100.0));
-
-	String state;
-	if(bmi < 20){
-		state = "저체중";
-	} else if(bmi <= 25) {
-		state = "정상";
-	} else if(bmi <= 30) {
-		state = "과체중";
-	} else if (bmi > 30) {
-		state = "비만";
-	} else {
-		state = "잘못된 입력";
-	}
-%>
-<div class="container">
-	<h2>BMI 측정 결과</h2>
-	<span class="display-4">당신은 <span class="text-info"><%= state %></span> 입니다.</span>
-	<div>BMI 수치 : <%= bmi %></div>
-</div>
+	<div class="container">
+		<h2>사칙 연산 계산기</h2>
+		<form method="post" action="/lesson02/quiz04_1.jsp">
+			<div class="d-flex">
+				<input type="text" name="number1" class="form-control col-2">
+				<select name="calc" class="form-control ml-2 col-1">
+					<option value="plus">+</option>
+					<option value="minus">-</option>
+					<option value="multiple">*</option>
+					<option value="divide">/</option>
+				</select> <input type="text" name="number2" class="form-control ml-2 col-2">
+				<button type="submit" class="btn btn-control bg-success ml-2">계산하기</button>
+			</div>
+		</form>
+	</div>
 </body>
 </html>
