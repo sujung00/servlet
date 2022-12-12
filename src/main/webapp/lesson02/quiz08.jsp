@@ -1,3 +1,6 @@
+<%@page import="java.io.InputStream"%>
+<%@page import="java.io.FileOutputStream"%>
+<%@page import="java.net.URL"%>
 <%@page import="java.awt.Image"%>
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -77,7 +80,7 @@
 
 	<div class="container">
 		<h2 class="text-center">책 목록</h2>
-		<table class="table">
+		<table class="table text-center">
 			<thead>
 				<tr>
 					<th>id</th>
@@ -95,7 +98,7 @@
 			%>
 				<tr>
 					<td><%= id %></td>
-					<td><%= image %></td>
+					<td><img src="<%=image%>" width="70px"></td>
 					<td><a href="/lesson02/quiz08_1.jsp?id=<%=id%>"><%= title %></td>
 				</tr>
 			<%

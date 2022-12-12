@@ -78,14 +78,30 @@ list.add(map);
 
 	<div class="container d-flex">
 		<%
-			for
+			String image = "";
+			String title = "";
+			String author = "";
+			String publisher = "";
+			for(Map<String, Object> book : list){
+				if(id == (Integer)book.get("id")){
+					image = (String)book.get("image");
+					title = (String)book.get("title");
+					author = (String)book.get("author");
+					publisher = (String)book.get("publisher");
+				
 		%>
 		<div>
+			<img src="<%=image%>" width="300px">
 		</div>
 		<div>
-			<span><%= list.get(index) %></span>
+			<div class="display-2"><b><%= title %></b></div>
+			<div class="text-info display-3"><%= author %></div>
+			<div class="display-4"><%= publisher %></div>
 		</div>
-		
+		<%
+				}
+			}
+		%>
 	</div>
 </body>
 </html>
