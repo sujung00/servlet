@@ -98,7 +98,7 @@
 			%>
 				<tr>
 					<td><%= id %></td>
-					<td><img src="<%=image%>" width="70px"></td>
+					<td><img src="<%=image%>" alt="표지" width="50px"></td>
 					<td><a href="/lesson02/quiz08_1.jsp?id=<%=id%>"><%= title %></td>
 				</tr>
 			<%

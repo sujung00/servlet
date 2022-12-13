@@ -94,9 +94,9 @@ list.add(map);
 			<img src="<%=image%>" width="300px">
 		</div>
 		<div>
-			<div class="display-2"><b><%= title %></b></div>
+			<div class="display-2 font-weight-bold"><%= title %></div>
 			<div class="text-info display-3"><%= author %></div>
-			<div class="display-4"><%= publisher %></div>
+			<div class="display-4 text-secondary"><%= publisher %></div>
 		</div>
 		<%
 				}
