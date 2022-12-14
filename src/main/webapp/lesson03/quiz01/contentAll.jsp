@@ -153,6 +153,7 @@
 				ch = list.get(i).get("ch");
 				name = list.get(i).get("name");
 				category = list.get(i).get("category");
+				
 			%>
 			<tr>
 				<td><%=ch%></td>

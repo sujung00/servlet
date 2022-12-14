@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>채널 안내</title>
+<title>Melong</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 	crossorigin="anonymous"></script>
@@ -33,7 +33,15 @@ header {
 }
 
 .menu {
-	height: 40px;
+	font-size: 15px;
+}
+
+.name {
+	font-size: 25px;
+}
+
+.name2 {
+	font-size: 35px;
 }
 
 footer {
@@ -42,32 +50,22 @@ footer {
 </style>
 </head>
 <body>
-	<div id="wrap" class="container">
-		<jsp:include page="header.jsp" />
+	<div class="container">
+		<header class="d-flex align-items-center">
+			<jsp:include page="header.jsp"/>
+		</header>
 
-		<jsp:include page="menu.jsp" />
+		<nav>
+			<jsp:include page="menu.jsp"/>
+		</nav>
 
-		<%
-		int category = Integer.parseInt(request.getParameter("category"));
-		String contentName = "contentAll.jsp";
-		if (category == 1) {
-			contentName = "contentGW.jsp";
-		} else if (category == 2) {
-			contentName = "contentDrama.jsp";
-		} else if (category == 3) {
-			contentName = "contentEntertainment.jsp";
-		} else if (category == 4) {
-			contentName = "contentMovie.jsp";
-		} else if (category == 5) {
-			contentName = "contentSport.jsp";
-		} else {
-			contentName = "contentAll.jsp";
-		}
-		%>
-		<jsp:include page="<%=contentName%>" />
-
-		<jsp:include page="footer.jsp" />
-
+		<div>
+			<jsp:include page="musicInfo.jsp" />
+		</div>
+		<hr>
+		<footer class="d-flex align-items-center text-dark">
+			<jsp:include page="footer.jsp"/>
+		</footer>
 	</div>
 </body>
 </html>
