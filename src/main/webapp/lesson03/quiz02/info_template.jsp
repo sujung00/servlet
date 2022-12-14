@@ -27,6 +27,10 @@
 	crossorigin="anonymous"></script>
 
 <style>
+a:hover{
+	text-decoration: none;
+}
+
 header {
 	height: 50px;
 	font-size: 30px;
