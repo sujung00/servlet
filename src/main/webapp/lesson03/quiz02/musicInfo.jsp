@@ -86,7 +86,7 @@ musicList.add(musicInfo);
 			<%
 			String title = request.getParameter("title");
 			for (Map<String, Object> music : musicList) {
-			if((request.getParameter("title") == null || title.equals(music.get("title")))) {
+			if(title.equals(music.get("title"))) {
 			%>
 			<div class="name font-wight-bold">곡 정보</div>
 			<div class="d-flex border border-success p-3">
@@ -123,14 +123,14 @@ musicList.add(musicInfo);
 
 			<div>
 				<div>
-					<div class="name mt-2">
+					<div class="name mt-3">
 						<b>가사</b>
-					</div>
 					<hr>
+					</div>
 					<div>가사 정보 없음</div>
 				</div>
 				<%
-				}
+					}
 				}
 				%>
 			</div>
