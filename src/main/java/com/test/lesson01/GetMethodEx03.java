@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/lesson01/ex03")
 public class GetMethodEx03 extends HttpServlet {
+	//클론 후 주석추가
+	
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		//한글 깨짐 방지
