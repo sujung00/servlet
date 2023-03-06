@@ -12,12 +12,12 @@
 <body>
 	<div class="container">
 		<h2>체격 조건 입력</h2>
-			<form method="get" action="/lesson02/quiz03_1.jsp">
-			<div class="d-flex">
-				<input type="text" id="height" name="height" placeholder="키를 입력하세요." class="form-control col-2">
-				<span class="pl-2 pr-2 pt-2">cm</span>
-				<input type="text" id="weight" name="weight" placeholder="몸무게를 입력하세요." class="form-control col-2">
-				<span class="pl-2 pr-2 pt-2">kg</span>
+		<form method="get" action="/lesson02/quiz03_1.jsp">
+			<div class="d-flex align-items-end">
+				<input type="text" name="height" placeholder="키를 입력하세요." class="form-control col-2">
+				<span class="ml-2 mr-2">cm</span>
+				<input type="text" name="weight" placeholder="몸무게를 입력하세요." class="form-control col-2">
+				<span class="ml-2 mr-2">kg</span>
 				<input type="submit" class="btn btn-info" value="계산">
 			</div>
 		</form>
