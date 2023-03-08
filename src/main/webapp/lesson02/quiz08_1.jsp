@@ -60,7 +60,23 @@
 int id = Integer.parseInt(request.getParameter("id"));
 %>
 	<div class="container d-flex">
-		<div></div>
+	<%
+	for (Map book : list){
+		if((int)book.get("id") == id){
+	%>
+		<div>
+			<img alt="책 표지" src="<%= book.get("image") %>" height="350px">
+		</div>
+		<div class="ml-2">
+			<div class="display-2"><b><%= book.get("title") %></b></div>
+			<div class="display-3 text-info"><%= book.get("author") %></div>
+			<div class="display-4 text-secondary"><%= book.get("publisher") %></div>
+		</div>
+	<%		
+		}
+	}
+	%>
+		
 	</div>
 </body>
 </html>
