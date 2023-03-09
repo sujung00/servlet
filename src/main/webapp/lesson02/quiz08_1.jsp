@@ -61,22 +61,22 @@ int id = Integer.parseInt(request.getParameter("id"));
 %>
 	<div class="container d-flex">
 	<%
-	for (Map book : list){
-		if((int)book.get("id") == id){
-	%>
-		<div>
-			<img alt="책 표지" src="<%= book.get("image") %>" height="350px">
-		</div>
-		<div class="ml-2">
-			<div class="display-2"><b><%= book.get("title") %></b></div>
-			<div class="display-3 text-info"><%= book.get("author") %></div>
-			<div class="display-4 text-secondary"><%= book.get("publisher") %></div>
-		</div>
-	<%		
+	Map<String, Object> target = new HashMap<>();
+	for (Map<String, Object> book : list){
+		if((Integer)book.get("id") == id){
+			target = book;
+			break;
 		}
 	}
 	%>
-		
+		<div>
+			<img alt="책 표지" src="<%= target.get("image") %>" height="350px">
+		</div>
+		<div class="ml-2">
+			<div class="display-2 font-weight-bold"><%= target.get("title") %></div>
+			<div class="display-3 text-info"><%= target.get("author") %></div>
+			<div class="display-4 text-secondary"><%= target.get("publisher") %></div>
+		</div>
 	</div>
 </body>
 </html>
