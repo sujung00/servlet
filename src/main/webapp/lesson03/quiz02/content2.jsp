@@ -84,7 +84,7 @@ musicList.add(musicInfo);
 %>
 <%
 String search = request.getParameter("search");
-int no = Integer.parseInt(request.getParameter("no"));
+String no = request.getParameter("no");
 %>
 <div>
 	<h4 class="mt-2 font-weight-bold">곡 정보</h4>
@@ -93,7 +93,7 @@ int no = Integer.parseInt(request.getParameter("no"));
 	<%
 		Map<String, Object> item = new HashMap<>();
 		for(Map<String, Object> music : musicList){
-			if((search != null && search.equals(music.get("title"))) || (no == (int)music.get("id"))){
+			if((search != null && search.equals(music.get("title"))) || (no != null && Integer.parseInt(no) == (Integer)music.get("id"))){
 				item = music;
 			}
 		}

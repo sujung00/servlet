@@ -24,6 +24,12 @@ menu a:link {
 	text-decoration: none;
 	font-weight: bold;
 }
+menu a:visited {color:black;}
+header a:link {
+	color: #009933;
+	text-decoration: none;
+}
+header a:visited {color:#009933;}
 </style>
 </head>
 <body>
