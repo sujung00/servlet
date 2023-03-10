@@ -82,21 +82,32 @@ musicInfo.put("composer", "아이유,이종훈,이채규");
 musicInfo.put("lyricist", "아이유");
 musicList.add(musicInfo);
 %>
-<%
-String search = request.getParameter("search");
-String no = request.getParameter("no");
-%>
 <div>
 	<h4 class="mt-2 font-weight-bold">곡 정보</h4>
 </div>
 <div class="border border-success p-3 d-flex">
 	<%
-		Map<String, Object> item = new HashMap<>();
+	//1. id로 넘어오는 경우
+	Map<String, Object> item = null;
+	if(request.getParameter("no") != null){
+		int no = Integer.parseInt(request.getParameter("no"));
 		for(Map<String, Object> music : musicList){
-			if((search != null && search.equals(music.get("title"))) || (no != null && Integer.parseInt(no) == (Integer)music.get("id"))){
+			if(no == (int)music.get("id")){
 				item = music;
+				break;
 			}
 		}
+	}
+	
+	if(request.getParameter("search") != null){
+		String search = request.getParameter("search");
+		for(Map<String, Object> music : musicList){
+			if(search.equals(music.get("title"))){
+				item = music;
+				break;
+			}
+		}
+	}
 	%>
 	<img alt="앨범사진" src="<%=item.get("thumbnail")%>" width="200px">
 	<div class="ml-3">
