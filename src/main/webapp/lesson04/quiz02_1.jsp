@@ -13,11 +13,13 @@
 	<div class="container">
 		<h2>즐겨찾기 추가</h2>
 		<form method="post" action="/lesson04/insert_quiz02">
-			<div>사이트명:</div>
-			<input type="text" name="name" class="form-control col-2">
-			<div>사이트 주소:</div>
-			<input type="text" name="url" class="form-control col-3">
-			<input type="submit" class="btn btn-success mt-2" value="추가">
+			<div class="form-group">
+				<div>사이트명:</div>
+				<input type="text" name="name" class="form-control col-2">
+				<div>사이트 주소:</div>
+				<input type="text" name="url" class="form-control col-3">
+				<input type="submit" class="btn btn-success mt-2" value="추가">
+			</div>
 		</form>	
 	</div>
 </body>

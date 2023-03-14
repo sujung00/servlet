@@ -1,3 +1,5 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.test.common.MysqlService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,27 +16,32 @@ menu {background: orange;}
 menu a, a:hover {
 	color: white;
 }
+.text-orange{color: orange;}
+.image {width: 300px; height: 160px}
+article:hover {background: orange;}
+article {
+border-style:solid;
+border-width: 0.5px;
+border-color: #FFA500;}
 </style>
 </head>
 <body>
 	<div class="container">
 		<header class="text-center text-white pt-2 pb-2">
-			<h1>HONG당무 마켓</h1>
+			<jsp:include page="header.jsp" />
 		</header>
-		<menu class="m-0">
-			<ul class="nav nav-fill">
-				<li class="nav-item"><a class="nav-link">리스트</a></li>
-				<li class="nav-item"><a class="nav-link">물건 올리기</a></li>
-				<li class="nav-item"><a class="nav-link">마이 페이지</a></li>
-			</ul>
+		<menu class="m-0 pb-2">
+			<jsp:include page="menu.jsp" />
 		</menu>
-		<section>
-			<div>
-				
-			</div>
+		<section class="mt-2">
+        	<%-- <jsp:include page="content1.jsp" /> --%>
+        	<div class="p-4">
+        		<h1>물건 올리기</h1>
+        		
+        	</div>
 		</section>
-		<footer class="text-center">
-			Copyright 2019. HONG All Rights Reserved.
+		<footer class="text-center m-3">
+			<jsp:include page="footer.jsp" />
 		</footer>
 	</div>
 </body>

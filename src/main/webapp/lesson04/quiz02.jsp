@@ -16,10 +16,11 @@
 	MysqlService ms = MysqlService.getInstance();
 	ms.connect();
 	
-	String selectQuery = "select * from `bookmark`;";
+	String selectQuery = "select * from `bookmark` order by `id` desc;";
 	ResultSet res = ms.select(selectQuery);
 %>
 <div class="container">
+	<h2 class="text-center">즐겨찾기 목록</h2>
 	<table class="table text-center">
 		<thead>
 			<tr>
@@ -34,7 +35,7 @@
 		%>
 			<tr>
 				<td><%= res.getString("name") %></td>
-				<td><a href="<%= res.getString("url") %>"><%= res.getString("url") %></a></td>
+				<td><a href="<%= res.getString("url") %>" target="_blank"><%= res.getString("url") %></a></td>
 				<td><a href="/lesson04/delete_quiz02?id=<%= res.getInt("id") %>" class="btn btn-danger">삭제</a></td>
 			</tr>
 		<%
