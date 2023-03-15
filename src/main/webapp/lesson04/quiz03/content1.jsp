@@ -15,7 +15,7 @@
 	%>
 	<article class="p-2 m-2">
 		<%
-		if (res.getString("pictureUrl") == null) {
+		if (res.getString("pictureUrl") == null || res.getString("pictureUrl").equals("")) {
 		%>
 		<div class="image d-flex align-items-center justify-content-center">
 			<h4>이미지 없음</h4>

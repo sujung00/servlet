@@ -34,11 +34,7 @@ border-color: #FFA500;}
 			<jsp:include page="menu.jsp" />
 		</menu>
 		<section class="mt-2">
-        	<%-- <jsp:include page="content1.jsp" /> --%>
-        	<div class="p-4">
-        		<h1>물건 올리기</h1>
-        		
-        	</div>
+        	<jsp:include page="content1.jsp"></jsp:include>
 		</section>
 		<footer class="text-center m-3">
 			<jsp:include page="footer.jsp" />
