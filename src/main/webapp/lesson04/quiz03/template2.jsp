@@ -90,7 +90,7 @@ article {
 			<jsp:include page="menu.jsp" />
 		</menu>
 		<section class="mt-2">
-			<jsp:include page="content2.jsp"></jsp:include>
+			<jsp:include page="content2.jsp" />
 		</section>
 		<footer class="text-center m-3">
 			<jsp:include page="footer.jsp" />
